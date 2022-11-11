@@ -9,8 +9,8 @@ const Comments = ({ postId, comments: initialComments }) => {
     console.log(newComment);
     // Un-comment the lines below to complete your solution
     // ====================
-    axios.post("/post/:id/comment", { newComment }).then((res) => {
-      setComments([comments + [newComment]]);
+    axios.post(`/post/:${postId}/comment`, { newComment }).then((res) => {
+      setComments([...comments, newComment]);
       setNewComment("");
     });
   };
